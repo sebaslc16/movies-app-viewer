@@ -1,0 +1,56 @@
+<div class="row animate__animated animate__fadeInRightBig mt-4 mb-4" *ngIf="personDetail">
+    <div class="col-md-6">
+
+        <img [src]="personDetail.profile_path | poster" 
+             [alt]="personDetail.name"
+             class="img-thumbnail">
+
+    </div>
+
+    <div class="col-md-6">
+        <h3>{{personDetail.name}}</h3>
+
+        <div class="row mt-3">
+            <div class="col">
+                
+                <p>Fecha de nacimiento:</p>
+
+            </div>
+            <div class="col text-light">
+                {{personDetail.birthday | date}}
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col">
+                
+                <p>Lugar de nacimiento:</p>
+
+            </div>
+            <div class="col text-light">
+                {{personDetail.place_of_birth}}
+            </div>
+        </div>
+
+    
+
+        <div class="row mt-3">
+            <div class="col text-light">
+                Biografia:
+                <br>
+                <h5>{{personDetail.biography}}</h5>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+            <div class="col">
+                <button class="btn btn-outline-info"
+                        (click)="onRegresar()">
+                    Regresar
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>

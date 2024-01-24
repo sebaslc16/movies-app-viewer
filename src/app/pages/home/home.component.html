@@ -1,0 +1,23 @@
+
+<h1>Cartelera</h1>
+
+<!-- enviar informacion desde otro componente; se cargan las movies
+del homecomponent a la variable movies del componente appslideshow -->
+<div class="row" *ngIf="moviesSlideShow.length > 0">
+    <div class="col">
+
+        <!-- TAREA: HACER QUE EL SLIDE CUANDO LLEGUE AL FINAL CARGUE MAS PELICULAS -->
+        <app-slideshow [movies]="moviesSlideShow"></app-slideshow>
+
+    </div>
+</div>
+
+<h1 class="mt-5">Películas</h1>
+
+<div class="row" *ngIf="movies.length > 0">
+    <div class="col">
+
+        <app-peliculas-poster-grid [movies]="movies"></app-peliculas-poster-grid>
+
+    </div>
+</div>

@@ -1,0 +1,20 @@
+
+<h3 class="animate__animated animate__bounce">Cast:</h3>
+<hr>
+
+<div class="swiper">
+    <div class="swiper-wrapper">
+
+        <div *ngFor="let actor of cast"
+             class="swiper-slide text-light text-center">
+
+             <img [src]="actor.profile_path | poster" 
+                  [alt]="actor.name"
+                  class="img-thumbnail puntero"
+                  (click)="getCastDetail(actor)">
+
+            {{actor.name}} <br> <small>({{actor.character}})</small>
+        </div>
+
+    </div>
+</div>

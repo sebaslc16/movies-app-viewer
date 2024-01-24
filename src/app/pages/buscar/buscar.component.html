@@ -1,0 +1,9 @@
+<h1>Busqueda: <small>{{busqueda}}</small></h1>
+
+<div class="row" *ngFor="let movie of movieSearch">
+
+    <div class="col">
+        <app-peliculas-poster-grid [movies]="movieSearch"></app-peliculas-poster-grid>
+    </div>
+    
+</div>

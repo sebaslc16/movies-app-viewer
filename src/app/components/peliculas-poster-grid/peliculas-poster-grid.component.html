@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-3 mb-5 animate__animated animate__fadeInLeftBig" *ngFor="let movie of movies">
+
+        <img [src]="movie.poster_path | poster"
+             class="img-fluid poster puntero"
+             (click)="detailMovie(movie)">
+
+             <div>
+                 <h3>{{movie.title}} ({{movie.release_date | date:'yyyy'}})</h3>
+                 <div class="row">
+                     <div class="col-10 text-light">
+                        <div style="text-align:left">
+                            <!-- modulo starrating para hacer de forma sencilla la valoracion de cada pelicula -->
+                            <star-rating [value]=movie.vote_average 
+                                         checkedcolor="orange" 
+                                         [totalstars]=10  
+                                         uncheckedcolor="grey" 
+                                         size="14px"
+                                         [readonly]=true
+                                         (rate)="onRate($event)"></star-rating>
+                          </div>
+                     </div>
+                     <div class="col-2 text-light">
+                         {{movie.vote_average | number:'1.1'}}
+                     </div>
+                 </div>
+             </div>
+    </div>
+</div>
